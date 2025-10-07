@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./MySchedule.css";
 
-// Mock data for courses (same as in other files)
+
 const mockCourses = [
   {
     code: "CS101",
@@ -74,7 +74,7 @@ const mockCourses = [
 export default function MySchedule() {
   const [scheduledCourses, setScheduledCourses] = useState([]);
 
-  // Load scheduled courses from localStorage (simulating persistence)
+
   useEffect(() => {
     const saved = localStorage.getItem('scheduledCourses');
     if (saved) {
@@ -82,28 +82,28 @@ export default function MySchedule() {
     }
   }, []);
 
-  // Remove course from schedule
+  
   const removeFromSchedule = (courseCode) => {
     const updated = scheduledCourses.filter(code => code !== courseCode);
     setScheduledCourses(updated);
     localStorage.setItem('scheduledCourses', JSON.stringify(updated));
   };
 
-  // Clear all courses from schedule
+ 
   const clearSchedule = () => {
     setScheduledCourses([]);
     localStorage.removeItem('scheduledCourses');
   };
 
-  // Get course details for scheduled courses
+
   const scheduledCourseDetails = scheduledCourses
     .map(code => mockCourses.find(course => course.code === code))
-    .filter(course => course); // Remove any undefined courses
+    .filter(course => course);
 
-  // Calculate total units
+  
   const totalUnits = scheduledCourseDetails.reduce((sum, course) => sum + course.units, 0);
 
-  // Group courses by day for schedule view
+ 
   const scheduleByDay = {
     'Mon': [],
     'Tue': [],
@@ -138,7 +138,7 @@ export default function MySchedule() {
         </div>
       ) : (
         <>
-          {/* Schedule Summary */}
+       
           <div className="schedule-summary">
             <div className="summary-stats">
               <div className="stat">
@@ -161,7 +161,7 @@ export default function MySchedule() {
             </button>
           </div>
 
-          {/* Weekly Schedule Grid */}
+        
           <div className="weekly-schedule">
             <h3>Weekly Schedule</h3>
             <div className="schedule-grid">
@@ -189,7 +189,7 @@ export default function MySchedule() {
             </div>
           </div>
 
-          {/* Course List */}
+          
           <div className="scheduled-courses-list">
             <h3>Scheduled Courses</h3>
             <div className="courses-grid">

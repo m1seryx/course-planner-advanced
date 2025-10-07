@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useSearchParams, Link } from "react-router-dom";
 import "./CourseTasks.css";
 
-// Mock data for tasks
+
 const mockTasks = {
   "CS101": [
     {
@@ -74,13 +74,13 @@ export default function CourseTasks({ themeColor = "#667eea" }) {
   const taskId = searchParams.get("taskId");
   const filter = searchParams.get("filter") || "all";
 
-  // Get tasks for the current course
+  
   useEffect(() => {
     const courseTasks = mockTasks[code] || [];
     setTasks(courseTasks);
   }, [code]);
 
-  // Filter tasks based on query params
+ 
   const filteredTasks = tasks.filter(task => {
     if (filter === "all") return true;
     if (filter === "pending") return task.status === "pending";
@@ -92,7 +92,7 @@ export default function CourseTasks({ themeColor = "#667eea" }) {
     return true;
   });
 
-  // Highlight specific task if taskId is provided
+  
   const highlightedTaskId = taskId ? parseInt(taskId) : null;
 
   const updateFilter = (newFilter) => {

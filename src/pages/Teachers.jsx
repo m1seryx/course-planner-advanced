@@ -84,11 +84,11 @@ export default function Teachers() {
   const department = searchParams.get("department") || "";
   const sort = searchParams.get("sort") || "name";
 
-  // Filter and sort teachers based on query params
+
   useEffect(() => {
     let filtered = [...mockTeachers];
 
-    // Filter by search query
+   
     if (q) {
       filtered = filtered.filter(teacher =>
         teacher.name.toLowerCase().includes(q.toLowerCase()) ||
@@ -99,14 +99,14 @@ export default function Teachers() {
       );
     }
 
-    // Filter by department
+   
     if (department) {
       filtered = filtered.filter(teacher =>
         teacher.department === department
       );
     }
 
-    // Sort teachers
+   
     filtered.sort((a, b) => {
       switch (sort) {
         case "name":

@@ -1,4 +1,4 @@
-/* Global App Styles */
+
 * {
   box-sizing: border-box;
 }
@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
 }
 
-/* Utility Classes */
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -32,7 +32,7 @@ body {
   border: 0;
 }
 
-/* Focus styles for accessibility */
+
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
@@ -41,7 +41,7 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Smooth scrolling */
+
 html {
   scroll-behavior: smooth;
 }

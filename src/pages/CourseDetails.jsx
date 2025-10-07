@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./CourseDetails.css";
 
-// Mock data for courses (same as in CoursesList)
+
 const mockCourses = [
   {
     code: "CS101",
@@ -210,7 +210,7 @@ export default function CourseDetails() {
           <div className="actions-card">
             <h4>Actions</h4>
             
-            {/* Schedule Message */}
+           
             {scheduleMessage && (
               <div className={`schedule-message ${scheduleMessage.includes('Warning') ? 'warning' : 'success'}`}>
                 {scheduleMessage}

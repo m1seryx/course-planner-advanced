@@ -85,7 +85,7 @@ export default function Help() {
 
   const q = searchParams.get("q") || "";
 
-  // Filter FAQ based on search query
+ 
   const filteredFaq = q 
     ? faqData.filter(faq => 
         faq.question.toLowerCase().includes(q.toLowerCase()) ||

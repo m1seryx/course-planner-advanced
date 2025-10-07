@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import "./CoursesList.css";
 
-// Mock data for courses
+
 const mockCourses = [
   {
     code: "CS101",
@@ -59,11 +59,11 @@ export default function CoursesList({ semester = "Fall 2025" }) {
   const day = searchParams.get("day") || "";
   const sort = searchParams.get("sort") || "name";
 
-  // Filter and sort courses based on query params
+ 
   useEffect(() => {
     let filtered = [...mockCourses];
 
-    // Filter by search query
+  
     if (q) {
       filtered = filtered.filter(course =>
         course.name.toLowerCase().includes(q.toLowerCase()) ||
@@ -72,14 +72,14 @@ export default function CoursesList({ semester = "Fall 2025" }) {
       );
     }
 
-    // Filter by day
+   
     if (day) {
       filtered = filtered.filter(course =>
         course.days.includes(day)
       );
     }
 
-    // Sort courses
+ 
     filtered.sort((a, b) => {
       switch (sort) {
         case "name":

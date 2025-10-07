@@ -12,10 +12,10 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {/* Redirect root to courses */}
+       
         <Route path="/" element={<CoursesList semester="Fall 2025" />} />
         
-        {/* Course routes */}
+       
         <Route path="/courses" element={<CoursesList semester="Fall 2025" />} />
         <Route path="/courses/:code" element={<CourseDetails />} />
         <Route 
@@ -23,12 +23,12 @@ export default function App() {
           element={<CourseTasks themeColor="#667eea" />} 
         />
         
-        {/* Other routes */}
+      
         <Route path="/teachers" element={<Teachers />} />
         <Route path="/help" element={<Help />} />
         <Route path="/schedule" element={<MySchedule />} />
         
-        {/* 404 catch-all */}
+      
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
