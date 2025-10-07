@@ -77,11 +77,11 @@ export default function CourseDetails() {
   
   const course = mockCourses.find(c => c.code === code);
   
-  // State for schedule management
+ 
   const [isInSchedule, setIsInSchedule] = useState(false);
   const [scheduleMessage, setScheduleMessage] = useState("");
 
-  // Check if course is in schedule on component mount
+ 
   useEffect(() => {
     const saved = localStorage.getItem('scheduledCourses');
     if (saved) {
@@ -90,31 +90,31 @@ export default function CourseDetails() {
     }
   }, [course.code]);
 
-  // Function to add course to schedule
+  
   const addToSchedule = () => {
     const saved = localStorage.getItem('scheduledCourses');
     const scheduledCourses = saved ? JSON.parse(saved) : [];
 
     if (isInSchedule) {
-      // Remove from schedule
+      
       const updated = scheduledCourses.filter(code => code !== course.code);
       localStorage.setItem('scheduledCourses', JSON.stringify(updated));
       setIsInSchedule(false);
       setScheduleMessage(`${course.code} removed from your schedule`);
       
-      // Clear message after 3 seconds
+   
       setTimeout(() => setScheduleMessage(""), 3000);
     } else {
-      // Add to schedule
+    
       const updated = [...scheduledCourses, course.code];
       localStorage.setItem('scheduledCourses', JSON.stringify(updated));
       setIsInSchedule(true);
       setScheduleMessage(`${course.code} added to your schedule successfully!`);
       
-      // Clear message after 3 seconds
+     
       setTimeout(() => setScheduleMessage(""), 3000);
       
-      // Simulate schedule conflict check
+     
       setTimeout(() => {
         if (course.code === "CS101" || course.code === "MATH201") {
           setScheduleMessage(`⚠️ Warning: ${course.code} may conflict with existing courses`);
