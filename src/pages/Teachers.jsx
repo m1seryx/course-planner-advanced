@@ -14,8 +14,6 @@ const mockTeachers = [
     officeHours: "Mon/Wed 2:00-4:00 PM",
     courses: ["CS101", "CS201", "CS301"],
     specialties: ["Algorithms", "Data Structures", "Machine Learning"],
-    bio: "Dr. Smith has been teaching computer science for over 10 years. She specializes in algorithms and data structures.",
-    rating: 4.8,
     avatar: "👩‍💻"
   },
   {
@@ -28,8 +26,6 @@ const mockTeachers = [
     officeHours: "Tue/Thu 1:00-3:00 PM",
     courses: ["MATH201", "MATH301", "MATH401"],
     specialties: ["Calculus", "Linear Algebra", "Statistics"],
-    bio: "Professor Johnson is a renowned mathematician with expertise in advanced calculus and linear algebra.",
-    rating: 4.6,
     avatar: "👨‍🏫"
   },
   {
@@ -42,8 +38,6 @@ const mockTeachers = [
     officeHours: "Mon/Wed/Fri 10:00 AM-12:00 PM",
     courses: ["ENG101", "ENG201", "ENG301"],
     specialties: ["Creative Writing", "Literature", "Composition"],
-    bio: "Dr. Williams is passionate about helping students develop their writing and communication skills.",
-    rating: 4.9,
     avatar: "👩‍🎓"
   },
   {
@@ -56,8 +50,6 @@ const mockTeachers = [
     officeHours: "Tue/Thu 11:00 AM-1:00 PM",
     courses: ["PHYS101", "PHYS201", "PHYS301"],
     specialties: ["Mechanics", "Thermodynamics", "Quantum Physics"],
-    bio: "Dr. Brown brings real-world physics applications to the classroom with his industry experience.",
-    rating: 4.7,
     avatar: "👨‍🔬"
   },
   {
@@ -70,8 +62,6 @@ const mockTeachers = [
     officeHours: "Mon/Wed 3:00-5:00 PM",
     courses: ["CHEM101", "CHEM201", "CHEM301"],
     specialties: ["Organic Chemistry", "Analytical Chemistry", "Biochemistry"],
-    bio: "Professor Davis is an award-winning chemistry educator with a focus on hands-on laboratory experiences.",
-    rating: 4.8,
     avatar: "👩‍🔬"
   }
 ];
@@ -111,8 +101,6 @@ export default function Teachers() {
       switch (sort) {
         case "name":
           return a.name.localeCompare(b.name);
-        case "rating":
-          return b.rating - a.rating;
         case "department":
           return a.department.localeCompare(b.department);
         default:
@@ -148,7 +136,7 @@ export default function Teachers() {
         <div className="search-section">
           <input
             type="text"
-            placeholder="Search teachers, departments, or specialties..."
+            placeholder="Search teachers or departments..."
             value={q}
             onChange={(e) => updateSearch(e.target.value)}
             className="search-input"
@@ -170,7 +158,6 @@ export default function Teachers() {
             <label>Sort by:</label>
             <select value={sort} onChange={(e) => updateSort(e.target.value)}>
               <option value="name">Name</option>
-              <option value="rating">Rating (High to Low)</option>
               <option value="department">Department</option>
             </select>
           </div>
@@ -185,10 +172,6 @@ export default function Teachers() {
               <div className="teacher-info">
                 <h3>{teacher.name}</h3>
                 <p className="department">{teacher.department}</p>
-                <div className="rating">
-                  <span className="stars">⭐</span>
-                  <span className="rating-value">{teacher.rating}</span>
-                </div>
               </div>
             </div>
 
@@ -229,16 +212,8 @@ export default function Teachers() {
                   ))}
                 </div>
               </div>
-
-              <div className="bio">
-                <p>{teacher.bio}</p>
-              </div>
             </div>
 
-            <div className="teacher-actions">
-              <button className="action-btn primary">Contact Teacher</button>
-              <button className="action-btn secondary">View Schedule</button>
-            </div>
           </div>
         ))}
       </div>
