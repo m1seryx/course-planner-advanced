@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8fafc;
+  background-color: #ffffff;
   color: #1e293b;
 }
 
@@ -37,7 +37,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 a:focus-visible {
-  outline: 2px solid #667eea;
+  outline: 2px solid #00146e;
   outline-offset: 2px;
 }
 

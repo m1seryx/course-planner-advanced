@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import "./CoursesList.css";
+import search from "../components/logo/search.png"; 
 
 
 const mockCourses = [
@@ -51,7 +52,7 @@ const mockCourses = [
   }
 ];
 
-export default function CoursesList({ semester = "Fall 2025" }) {
+export default function CoursesList({ semester = "1st Semester SY 2025-2026" }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [filteredCourses, setFilteredCourses] = useState(mockCourses);
 
@@ -111,12 +112,14 @@ export default function CoursesList({ semester = "Fall 2025" }) {
   return (
     <div className="courses-list">
       <div className="header-section">
-        <h2>Courses - {semester}</h2>
+        <h2>{semester}</h2>
         <p>Browse and manage your course schedule</p>
       </div>
 
       <div className="controls">
         <div className="search-section">
+        
+        <img src={search} alt=""  className="search-logo"/>
           <input
             type="text"
             placeholder="Search courses, codes, or teachers..."
@@ -128,7 +131,7 @@ export default function CoursesList({ semester = "Fall 2025" }) {
 
         <div className="filters">
           <div className="day-filter">
-            <label>Day:</label>
+            <label className="label-text">Day:</label>
             <select value={day} onChange={(e) => updateDayFilter(e.target.value)}>
               <option value="">All Days</option>
               <option value="Mon">Monday</option>

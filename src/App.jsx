@@ -13,10 +13,10 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
        
-        <Route path="/" element={<CoursesList semester="Fall 2025" />} />
+        <Route path="/" element={<CoursesList semester="1st Semester SY 2025-2026" />} />
         
        
-        <Route path="/courses" element={<CoursesList semester="Fall 2025" />} />
+        <Route path="/courses" element={<CoursesList semester="1st Semester SY 2025-2026" />} />
         <Route path="/courses/:code" element={<CourseDetails />} />
         <Route 
           path="/courses/:code/tasks" 

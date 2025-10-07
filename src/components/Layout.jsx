@@ -1,12 +1,17 @@
 import { Outlet, NavLink } from "react-router-dom";
 import "./Layout.css";
+import book from "./logo/book.png";
 
 export default function Layout() {
   return (
     <div className="layout">
       <header className="header">
-        <h1>Course Planner Advanced</h1>
+        <div className="header-left">
+          <img src={book} alt="" className="logo"/>
+       <h1>Course Planner Advanced</h1>
+       </div>
         <nav className="nav">
+         
           <NavLink to="/courses" end className="nav-link">
             Courses
           </NavLink>
@@ -20,6 +25,7 @@ export default function Layout() {
             Help
           </NavLink>
         </nav>
+         
       </header>
       
       <main className="main">

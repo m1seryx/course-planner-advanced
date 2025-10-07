@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./CourseDetails.css";
+import search from "../components/logo/search.png";
 
 
 const mockCourses = [
@@ -159,10 +160,10 @@ export default function CourseDetails() {
           )}
           <div className="course-meta">
             <span className="units">{course.units} units</span>
-            <span className="credits">{course.credits} credits</span>
             <span className="teacher">Taught by {course.teacher}</span>
           </div>
         </div>
+
       </div>
 
       <div className="course-content">
@@ -232,19 +233,6 @@ export default function CourseDetails() {
             <Link to="/schedule" className="action-btn secondary">
               View My Schedule
             </Link>
-            <button className="action-btn secondary">
-              Download Syllabus
-            </button>
-          </div>
-
-          <div className="teacher-card">
-            <h4>Teacher Info</h4>
-            <div className="teacher-info">
-              <strong>{course.teacher}</strong>
-              <Link to="/teachers" className="teacher-link">
-                View Teacher Profile →
-              </Link>
-            </div>
           </div>
         </div>
       </div>

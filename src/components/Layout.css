@@ -2,24 +2,41 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgb(43, 41, 42);
   color: white;
   padding: 1rem 2rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   display: flex;
+  justify-content: space-between; 
+  
+   
+}
+.logo{
+  height: 70px;
+  width: 70px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+.header-left{
+  display: flex;
+  align-items: center;
 }
 
 .header h1 {
   margin: 0 0 1rem 0;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
+  font-style: poppins;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
+  margin-right: 2rem;
 }
 
 .nav-link {
@@ -29,6 +46,7 @@
   border-radius: 6px;
   transition: all 0.3s ease;
   font-weight: 500;
+  font-size: 2rem;
 }
 
 .nav-link:hover {
